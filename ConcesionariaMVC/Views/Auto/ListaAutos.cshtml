@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ConcesionariaMVC.Models.Auto> 
+@{
+    ViewBag.Title = "Autos";
+}
+
+
+
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div>
+            <h2>Lista de autos</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        Patente
+                    </th>
+                    <th class="text-center">
+                        Kilometros
+                    </th>
+                    <th class="text-center">
+                        Promocion
+                    </th>
+                    <th class="text-center">
+                        Precio
+                    </th>
+                    <th class="text-center">
+                        IdMarca
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var auto in Model)
+                {
+                <tr class="text-center">
+                    <td>
+                        @auto.Patente
+                    </td>
+                    <td>
+                        @auto.Kilometros
+                    </td>
+                    <td>
+                        @auto.Promocion
+                    </td>
+                    <td>
+                        @auto.Precio
+                    </td>
+                    <td>
+                        @auto.IdMarca
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

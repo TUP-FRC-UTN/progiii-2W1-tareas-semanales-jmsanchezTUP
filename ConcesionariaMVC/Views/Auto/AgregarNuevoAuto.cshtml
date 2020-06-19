@@ -1,0 +1,49 @@
+﻿@model ConcesionariaMVC.Models.Auto 
+@{
+    ViewBag.Title = "Agregar autos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.marcas;
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Cargar nuevo auto al sistema</h4>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label>Patente</label>
+                    @Html.TextBoxFor(model => model.Patente, htmlAttributes: new { @class = "form-control", id = "txtPatente"})
+                </div>
+                <div class="form-group">
+                    <label>Marca</label>
+                    @Html.DropDownList("IdMarca", items, "Seleccionar Marca", htmlAttributes: new { @class = "form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Kilometros</label>
+                    @Html.TextBoxFor(model => model.Kilometros, htmlAttributes: new { @class = "form-control", id = "txtKms"})
+                </div>
+                <div class="form-group">
+                    <label>Promocion</label>
+                    @Html.CheckBoxFor(model => model.Promocion, htmlAttributes: new { @class = "form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Precio</label>
+                    @Html.TextBoxFor(model => model.Precio, htmlAttributes: new { @class = "form-control", id = "txtPrecio"})
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Cargar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
